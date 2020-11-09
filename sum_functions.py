@@ -106,7 +106,7 @@ def word_frequency(article_text):
             st.write(i[0], i[1])
 
     # Save the results in a dataframe and plot it
-    wf_dic = {}
+    wf_dic = dict()
     for i in sort_orders: 
         wf_dic.update({i[0] : i[1]})
     
