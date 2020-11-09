@@ -5,6 +5,7 @@ from collections import Counter
 from string import punctuation
 import math
 import en_core_web_lg
+import streamlit as st
 
 nlp = en_core_web_lg.load()
 
@@ -73,10 +74,10 @@ def get_summary(article_text, limit_percent=0.1):
     get_tags(article_text), print("\n")
     print("---"*40)
     
-    for i in range(len(summary)): 
-        print("- ",summary[i],"\n")
+    #for i in range(len(summary)): 
+    #    print("- ",summary[i],"\n")
 
-    #return print(' '.join(summary))
+    return print(' '.join(summary))
     
 ############################################################################################################### 
 
@@ -107,7 +108,8 @@ def word_frequency(article_text):
 def reading_time(doc): # For the original article
     total_words = [token.text for token in nlp(doc)]
     time = len(total_words)/225
-    return "Reading time for the entire article: {} mins (aprox)".format(round(time))
+    #return "Reading time for the entire article: {} mins (aprox)".format(round(time))
+    st.write("Reading time for the entire article: {} mins (aprox)".format(round(time)))
     
 
 ############################################################################################################### 
