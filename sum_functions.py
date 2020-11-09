@@ -106,11 +106,13 @@ def word_frequency(article_text):
             st.write(i[0], i[1])
 
     # Save the results in a dataframe and plot it
+    wf_dic = {}
     for i in sort_orders: 
-        wf_df = pd.DataFrame({i[0] : i[1]})
+        wf_dic.update({i[0] : i[1]})
     
-    st.dataframe(wf_df)
-    #st.bar_chart(wf_df)
+    wf_df = pd.DataFrame(wf_dic, index=["Word Frequencies"])
+    #st.dataframe(wf_df)
+    st.bar_chart(wf_df)
     
 ############################################################################################################### 
 
