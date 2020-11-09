@@ -10,9 +10,15 @@ The project has been in planning for around eight years but is moving relatively
 Around the world, other wildlife crossings exist and have been proven to work, though the project will be the first in a dense urban area. “We have something no other crossing has, which is millions of people around it,” says Pratt. “The Kardashians are down the street. We’re building this in the most densely populated metropolitan area in the country, and these crossings, for the most part, have been built in very rural areas. So we have some things we have to mitigate for that they don’t, and two of those are sound and light.” Three hundred thousand to 400,000 cars pass through the area each day; the bridge, 165 feet wide, is designed to keep the crossing as quiet and dark as possible, with vegetation planted to extend to the wild spaces on either side of the freeway.
 “We’re saving mountain lions, and we’re reconnecting an ecosystem for all wildlife,” she says. “But we’re also going to have some great model for what others can do in urban areas to get animals across the road.”'''
 
-user_input = st.text_area("Input for News Article:", text, height = 128)
+
+st.write("# Text Summarization")
+st.write("Paste any news article into the following text field and get a short summary.") 
 
 
-get_summary(user_input)
+user_input_txt = st.text_area("Input for News Article:", text, height = 256)
+user_input_per = st.slider('Slide me', min_value=0.05, max_value=0.5, value=0.1)
+
+
+get_summary(user_input_txt, user_input_per)
 #reading_time(user_input)
 ##st.write(txt)
