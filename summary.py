@@ -13,6 +13,6 @@ Around the world, other wildlife crossings exist and have been proven to work, t
 user_input = st.text_area("Input for News Article:", text)
 
 
-#txt = get_summary(user_input)
-reading_time(user_input)
+get_summary(user_input)
+#reading_time(user_input)
 ##st.write(txt)
