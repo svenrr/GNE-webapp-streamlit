@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 from sum_functions import * 
 
-st.text_area("Input:")
+user_input = st.text_area("Input for News Article:", text)
 
 text = '''For mountain lions living in Los Angeles—and yes, mountain lions do manage to survive in the second-largest city in the U.S.—the 101 freeway is a major barrier to their daily routines. The same is true for other wildlife. But plans to build a massive wildlife crossing over a 10-lane stretch of the freeway just north of the city are now in the final phase of design and engineering. The project will be the largest bridge of its kind in the world.
 Reconnecting the open space on either side of the freeway is crucial for wildlife. “We know from science what’s going on there, and it’s a little deeper than just that the animals are getting hit by cars,” says Beth Pratt of the National Wildlife Federation, one of several partner organizations working on the project. “They are becoming genetically isolated, because animals cannot move into the small islands of habitat that are created by our freeways.” The situation is most acute for mountain lions, who risk extinction in the area within decades, but other wildlife, from lizards to birds, are also showing a decline in genetic diversity.
@@ -13,4 +13,5 @@ Around the world, other wildlife crossings exist and have been proven to work, t
 “We’re saving mountain lions, and we’re reconnecting an ecosystem for all wildlife,” she says. “But we’re also going to have some great model for what others can do in urban areas to get animals across the road.”'''
 
 
-get_summary(text)
+txt = get_summary(user_input)
+st.write(txt)
