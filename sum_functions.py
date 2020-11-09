@@ -107,7 +107,7 @@ def word_frequency(article_text):
 def reading_time(doc): # For the original article
     total_words = [token.text for token in nlp(doc)]
     time = len(total_words)/225
-    print("Reading time for the entire article: {} mins (aprox)".format(round(time)))
+    return "Reading time for the entire article: {} mins (aprox)".format(round(time))
     
 
 ############################################################################################################### 
