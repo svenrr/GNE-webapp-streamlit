@@ -70,7 +70,7 @@ def get_summary(article_text, limit_percent=0.1):
     reading_time(article_text)
     st.write("&#35; of sentences (pre):  {}".format(len(list(doc.sents))))
     st.write("&#35; of sentences (post): {}".format(len(summary)))
-    st.write("\n")
+    #st.write("\n")
     st.write("---"*40)
     get_tags(article_text)#, st.write("\n")
     
