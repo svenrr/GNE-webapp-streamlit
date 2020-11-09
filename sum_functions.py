@@ -113,7 +113,7 @@ def word_frequency(article_text):
     
     wf_df = pd.DataFrame(wf_dic, index=["Word Frequencies"])
     st.dataframe(wf_df)
-    #st.bar_chart(wf_df)
+    st.pyplot(wf_df)
     
 ############################################################################################################### 
 
