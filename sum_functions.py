@@ -6,6 +6,7 @@ from string import punctuation
 import math
 import en_core_web_md
 import streamlit as st
+import matplotlib.pyplot as plt
 
 nlp = en_core_web_md.load()
 
@@ -105,6 +106,12 @@ def word_frequency(article_text):
         if i[1] > 3:
             st.write(i[0], i[1])
 
+    # Save the results in a dataframe and plot it
+    for i in sort_orders: 
+        wf_df = pd.DataFrame({i[0] : i[1]})
+    
+    st.bar_chart(wf_df)
+    
 ############################################################################################################### 
 
 # Avg. reading time = 200-250 (https://irisreading.com/what-is-the-average-reading-speed/)
