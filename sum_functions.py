@@ -137,7 +137,7 @@ def get_tags(article_text):
     tag_list = []
     
     for word in sort_orders[0:5]: 
-        tag_list.append("&#35;",word[0])
+        tag_list.append("&#35;" + word[0] + " ")
        
     st.write(tag_list)
 
