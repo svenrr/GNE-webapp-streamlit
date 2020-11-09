@@ -68,8 +68,8 @@ def get_summary(article_text, limit_percent=0.1):
             break 
     
     reading_time(article_text)
-    st.write("# of sentences (pre):  {}".format(len(list(doc.sents))))
-    st.write("# of sentences (post): {}".format(len(summary)))
+    st.write("&#35; of sentences (pre):  {}".format(len(list(doc.sents))))
+    st.write("&#35; of sentences (post): {}".format(len(summary)))
     st.write("\n")
     get_tags(article_text), st.write("\n")
     st.write("---"*40)
@@ -135,6 +135,6 @@ def get_tags(article_text):
     sort_orders = sorted(word_freqs.items(), key=lambda x: x[1], reverse=True)
     
     for word in sort_orders[0:5]: 
-        st.write("#",word[0],end=" ")
+        st.write("&#35;",word[0],end=" ")
 
 ############################################################################################################### 
