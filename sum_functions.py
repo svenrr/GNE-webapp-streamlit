@@ -6,7 +6,6 @@ from string import punctuation
 import math
 import en_core_web_md
 import streamlit as st
-import matplotlib.pyplot as plt
 
 nlp = en_core_web_md.load()
 
