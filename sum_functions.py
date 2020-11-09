@@ -99,7 +99,7 @@ def word_frequency(article_text):
                 
     sort_orders = sorted(word_freqs.items(), key=lambda x: x[1], reverse=True)
     st.write("---"*40)
-    st.write("Words that appear more than three times:")
+    st.write("**Words that appear more than three times:**")
 
     for i in sort_orders:
         if i[1] > 3:
@@ -142,6 +142,6 @@ def get_tags(article_text):
     for word in sort_orders[0:5]: 
         tag_list = tag_list + ("#" + word[0] + " ")
        
-    st.write(tag_list)
+    st.write(**tag_list**)
 
 ############################################################################################################### 
