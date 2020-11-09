@@ -110,7 +110,7 @@ def word_frequency(article_text):
     for i in sort_orders: 
         wf_dic.update({i[0] : i[1]})
     
-    wf_df = pd.DataFrame(wf_dic, index=["Word Frequencies"])
+    wf_df = pd.DataFrame(wf_dic)
     #st.dataframe(wf_df)
     st.bar_chart(wf_df)
     
