@@ -134,7 +134,11 @@ def get_tags(article_text):
                 
     sort_orders = sorted(word_freqs.items(), key=lambda x: x[1], reverse=True)
     
+    tag_list = []
+    
     for word in sort_orders[0:5]: 
-        st.write("&#35;",word[0],end=" ")
+        tag_list.append("&#35;",word[0],end=" ")
+       
+    st.write(tag_list)
 
 ############################################################################################################### 
