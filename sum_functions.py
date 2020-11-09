@@ -4,10 +4,10 @@ import spacy
 from collections import Counter
 from string import punctuation
 import math
-import en_core_web_lg
+import en_core_web_md
 import streamlit as st
 
-nlp = en_core_web_lg.load()
+nlp = en_core_web_md.load()
 
 ###############################################################################################################
 
@@ -140,8 +140,8 @@ def get_tags(article_text):
     tag_list = ""
     
     for word in sort_orders[0:5]: 
-        tag_list = tag_list + ("#" + word[0] + " ")
+        tag_list = tag_list + ("**#" + word[0] + " ")
        
-    st.write(**tag_list**)
+    st.write(tag_list)
 
 ############################################################################################################### 
