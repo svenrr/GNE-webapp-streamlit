@@ -15,4 +15,4 @@ user_input = st.text_area("Input for News Article:", text)
 
 #txt = get_summary(user_input)
 reading_time(user_input)
-#st.write(txt)
+##st.write(txt)
