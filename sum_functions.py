@@ -52,8 +52,7 @@ def get_summary(article_text, limit_percent=0.1):
     if len(list(doc.sents)) > 25: 
         limit = math.ceil(len(list(doc.sents)) * limit_percent)
     elif len(list(doc.sents)) < 6: 
-        st.write("Original Text has less than 5 sentences. No summary is needed.")
-        break
+        return ("Original Text has less than 5 sentences. No summary is needed.")
     else: 
         limit = 3
     
