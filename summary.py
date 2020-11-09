@@ -14,11 +14,11 @@ Around the world, other wildlife crossings exist and have been proven to work, t
 st.write("# Text Summarization")
 st.write("Paste any news article into the following text field and get a short summary.") 
 
+user_input_per = st.slider('How much should the text be reduced (%)?', min_value=0.1, max_value=1, value=0.9, step=0.05)
 
 user_input_txt = st.text_area("Input for News Article:", text, height = 256)
-user_input_per = st.slider('Slide me', min_value=0.05, max_value=0.5, value=0.1)
 
 
-get_summary(user_input_txt, user_input_per)
+get_summary(user_input_txt, (1-user_input_per))
 #reading_time(user_input)
 ##st.write(txt)
