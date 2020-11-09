@@ -52,7 +52,7 @@ def get_summary(article_text, limit_percent=0.1):
     if len(list(doc.sents)) > 30: 
         limit = math.ceil(len(list(doc.sents)) * limit_percent)
     elif len(list(doc.sents)) < 6: 
-        return "Original Text has less than 5 sentences. No summary is needed."
+        st.write("Original Text has less than 5 sentences. No summary is needed.")
     else: 
         limit = 3
     
@@ -68,16 +68,16 @@ def get_summary(article_text, limit_percent=0.1):
             break 
     
     reading_time(article_text)
-    print("# of sentences (pre):  {}".format(len(list(doc.sents))))
-    print("# of sentences (post): {}".format(len(summary)))
-    print("\n")
-    get_tags(article_text), print("\n")
-    print("---"*40)
+    st.write("# of sentences (pre):  {}".format(len(list(doc.sents))))
+    st.write("# of sentences (post): {}".format(len(summary)))
+    st.write("\n")
+    get_tags(article_text), st.write("\n")
+    st.write("---"*40)
     
-    #for i in range(len(summary)): 
-    #    print("- ",summary[i],"\n")
+    for i in range(len(summary)): 
+        st.write("- ",summary[i],"\n")
 
-    return print(' '.join(summary))
+    #return print(' '.join(summary))
     
 ############################################################################################################### 
 
@@ -96,11 +96,11 @@ def word_frequency(article_text):
                 word_freqs[word.text] += 1
                 
     sort_orders = sorted(word_freqs.items(), key=lambda x: x[1], reverse=True)
-    print("Words that appear more than two times:")
-    print("---"*40)
+    st.write("Words that appear more than two times:")
+    st.write("---"*40)
     for i in sort_orders:
         if i[1] > 2:
-            print(i[0], i[1])
+            st.write(i[0], i[1])
 
 ############################################################################################################### 
 
@@ -135,6 +135,6 @@ def get_tags(article_text):
     sort_orders = sorted(word_freqs.items(), key=lambda x: x[1], reverse=True)
     
     for word in sort_orders[0:5]: 
-        print("#",word[0],end=" ")
+        st.write("#",word[0],end=" ")
 
 ############################################################################################################### 
