@@ -20,8 +20,9 @@ user_input_txt = st.text_area("Input for News Article:", text, height = 256)
 
 if st.button("Generate summary"):
   get_summary(user_input_txt, (1-user_input_per))
+  word_frequency(user_input_txt)
+ 
 
-  
 #get_summary(user_input_txt, (1-user_input_per))
 #reading_time(user_input)
 ##st.write(txt)
