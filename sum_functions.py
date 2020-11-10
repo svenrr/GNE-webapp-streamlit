@@ -70,7 +70,7 @@ def get_summary(article_text, limit_percent=0.1):
             break 
     
     reading_time(article_text)
-    st.write("Readability: ") + textstat.text_standard(article_text, float_output=False) #+ st.write("(") + textstat.flesch_reading_ease(article_text) + st.write(")")
+    st.write("Readability: ") , textstat.text_standard(article_text, float_output=False) #+ st.write("(") + textstat.flesch_reading_ease(article_text) + st.write(")")
     st.write("&#35; of sentences (pre):  {}".format(len(list(doc.sents))))
     st.write("&#35; of sentences (post): {}".format(len(summary)))
     #st.write("\n")
