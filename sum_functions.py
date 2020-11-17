@@ -12,11 +12,6 @@ nlp = en_core_web_md.load()
 
 ###############################################################################################################
 
-def read_article(file_name):
-    return open(file_name,"r",encoding="utf-8").read()
-
-###############################################################################################################
-
 def get_summary(article_text, limit_percent=0.1):
     ''' Inputs: 
     * article_text = Text to summarize 
@@ -69,19 +64,18 @@ def get_summary(article_text, limit_percent=0.1):
         if(counter >= limit):
             break 
     
+    # Get the output 
     reading_time(article_text)
     st.write("Readability: "),st.write(str(textstat.text_standard(article_text, float_output=False))) #+ st.write("([Flesch Reading Ease:](https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests#Flesch_reading_ease) ") + st.write(str(textstat.flesch_reading_ease(article_text))) + st.write(")")
     st.write("&#35; of sentences (pre):  {}".format(len(list(doc.sents))))
     st.write("&#35; of sentences (post): {}".format(len(summary)))
     #st.write("\n")
     st.write("---"*40)
-    get_tags(article_text)#, st.write("\n")
+    get_tags(article_text)
     
-    
+    # Print out the bullet points 
     for i in range(len(summary)): 
         st.write("- ",summary[i],"\n")
-
-    #return print(' '.join(summary))
     
 ############################################################################################################### 
 
@@ -103,9 +97,9 @@ def word_frequency(article_text):
     st.write("---"*40)
     st.write("**Words that appear more than three times:**")
 
-    for i in sort_orders:
-        if i[1] > 3:
-            st.write(i[0], i[1])
+    #for i in sort_orders:
+    #    if i[1] > 3:
+    #        st.write(i[0], i[1])
 
     # Save the results in a dataframe and plot it
     wf_dic = dict()
@@ -115,7 +109,6 @@ def word_frequency(article_text):
     
     wf_df = pd.DataFrame(wf_dic, index=["Word Frequencies"])
     st.dataframe(wf_df)
-    st.pyplot(wf_df)
     
 ############################################################################################################### 
 
