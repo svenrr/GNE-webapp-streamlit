@@ -5,3 +5,4 @@ awesome-streamlit
 pytrends
 praw
 sklearn
+xgboost
