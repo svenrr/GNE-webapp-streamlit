@@ -45,13 +45,15 @@ def get_summary(article_text, limit_percent=0.1):
                     sentence_strength[sent] = freq_words[word.text]
                     
     # Determine the number of sentences in the summarization (min. 3)
-    if len(list(doc.sents)) > 25: 
-        limit = math.ceil(len(list(doc.sents)) * limit_percent)
-    elif len(list(doc.sents)) < 6: 
-        st.write("Original Text has less than 5 sentences. No summary is needed.")
-        limit = 0 
-    else: 
-        limit = 3
+    #if len(list(doc.sents)) > 25: 
+    #    limit = math.ceil(len(list(doc.sents)) * limit_percent)
+    #elif len(list(doc.sents)) < 6: 
+    #    st.write("Original Text has less than 5 sentences. No summary is needed.")
+    #    limit = 0 
+    #else: 
+    #    limit = 3
+    
+    limit = math.ceil(len(list(doc.sents)) * limit_percent)  
     
     # Find the top sentences 
     summary = []
