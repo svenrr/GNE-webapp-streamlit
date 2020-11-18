@@ -8,13 +8,13 @@ import awesome_streamlit as ast
 def write():
     """Used to write the page in the app.py file"""
     with st.spinner("Loading About ..."):
-        st.title("About this project")
+        st.title("About us")
         st.markdown(
-            """## Idea
-This is a project in which we try to differentiate between positive and negative/neutral news from the web automatically. For this we use a variety of machine learning models and dictionary based apporaches to sentiment analysis. Furthermore the goal of this project was to categorize (e.g. business, finance, sports etc.) and summarize news articles. The finished product could either be a website on which users could find only positive news, or a livefeed, where our project could serve as a helpful tool for journalists or similar professions.
+            """## Project
+This is our one month final project from the Data Science Bootcamp of neuefische. This was a group work, which we approached in a team of three people. If you have any questions or similar, feel free to contact us directly via LinkedIn. You can also find more information about us on the [talent website](https://talents.neuefische.de/?role=Data%20Scientist&alumniLocation=K%C3%B6ln) of neuefische.  
 
 ## The Developers
-This project is developed by Fabian, Sven and Christoph.
+This project is developed by [Fabian März](https://www.linkedin.com/in/fabian-m%C3%A4rz-3913981b3/), [Sven Rutsch](https://www.linkedin.com/in/sven-rutsch-b9728612b/) and [Christoph Blickle](https://www.linkedin.com/in/christoph-blickle-4064ab1ba).
 
 ## Github
 [Good News Everyone Repository](https://github.com/svenrr/good_news_everyone)
