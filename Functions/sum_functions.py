@@ -66,16 +66,18 @@ def get_summary(article_text, limit_percent=0.1):
         if(counter >= limit):
             break 
     
-    # Get the output 
+    # Get additional output 
     #st.write("&#35; of sentences (pre):  {}".format(len(list(doc.sents))))
     #st.write("&#35; of sentences (post): {}".format(len(summary)))
 
     return summary
     
 ############################################################################################################### 
+
 def readability(article_text):
     return textstat.text_standard(article_text, float_output=False)
 
+############################################################################################################### 
 
 def word_frequency(article_text):
     from spacy.lang.en.stop_words import STOP_WORDS
@@ -92,10 +94,6 @@ def word_frequency(article_text):
                 word_freqs[word.text] += 1
                 
     sort_orders = sorted(word_freqs.items(), key=lambda x: x[1], reverse=True)
-
-    #for i in sort_orders:
-    #    if i[1] > 3:
-    #        st.write(i[0], i[1])
 
     # Save the results in a dataframe and plot it
     wf_dic = dict()
@@ -138,7 +136,7 @@ def get_tags(article_text):
                 
     sort_orders = sorted(word_freqs.items(), key=lambda x: x[1], reverse=True)
     
-    tag_list = "**"
+    tag_list = ""
     
     for word in sort_orders[0:5]: 
         tag_list = tag_list + ("#" + word[0] + " ")
