@@ -26,14 +26,20 @@ While the overall energy costs of this recycling process are lower, researchers 
     text = Preprocessor(user_input)
     
     # Sidebar
-    #st.sidebar.title('Features')
-    #token_box = st.sidebar.checkbox("Show Tokenization")
-    #st.sidebar.info('This enables you to see...')
+    st.sidebar.title('Features')
+    st.sidebar.info('If you want to see some more details you can chose them here')
+    tokenization = st.sidebar.checkbox("Show Tokenization")
+    readability = st.sidebar.checkbox("Show readablity of the article")
+    word_frequency = st.sidebar.checkbox("Show word frequency")
+    reading_time = st.sidebar.checkbox("Show reading time")
        
-    ## Main Functions
+    ### Main Functions ###
     
-    user_input_per = st.slider('How much should the text be reduced (%)?', min_value=0.1, max_value=0.9, value=0.9, step=0.05)
+    user_input_per = st.slider('Here you can chose by how much percent the article should be reduced for the summary', min_value=0.1, max_value=0.9, value=0.9, step=0.05)
     if st.button('Analyse'):
+        
+        if tokenization:
+            st.write('**Tokens:**', text.lem_text())
         
         # Sentiment
         result = analyse(text.transform())
@@ -45,13 +51,15 @@ While the overall energy costs of this recycling process are lower, researchers 
         #    pass
     
         # Category
-        st.write('**Category:**', Categorizer().pred(text.lem_text()))
+        st.write('**Category:**', Categorizer().pred(text.lem_text()).capitalize())
     
         # Summary
-        summary = get_summary(user_input, )
+        summary = get_summary(user_input, (1-user_input_per))
         st.write('**Extractive Summary:**')
         for i in range(len(summary)): 
             st.write("- ",summary[i],"\n")
+            
+        st.write(get_tags(user_input)+'**')
     
 if __name__ == "__main__":
     write()
