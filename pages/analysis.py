@@ -2,7 +2,6 @@ import logging
 import streamlit as st
 import awesome_streamlit as ast
 from awesome_streamlit.core.services import resources
-from Functions.sum_functions import * 
 
 # Modules for this site
 import numpy as np
@@ -10,6 +9,7 @@ import pandas as pd
 from Functions.Preprocessor import Preprocessor
 from Functions.sentiment import analyse
 from Functions.categorizer import Categorizer
+from Functions.sum_functions import * 
 
 logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)
 
@@ -37,7 +37,7 @@ While the overall energy costs of this recycling process are lower, researchers 
         
         # Sentiment
         result = analyse(text.transform())
-        st.write('**Sentiment**:', result)
+        st.write('**Sentiment:**', result)
     
         #if token_box:
         #    st.write('Tokens:', text.lem_text())
@@ -45,11 +45,13 @@ While the overall energy costs of this recycling process are lower, researchers 
         #    pass
     
         # Category
-        st.write('**Category**:', Categorizer().pred(text.lem_text()))
+        st.write('**Category:**', Categorizer().pred(text.lem_text()))
     
         # Summary
-        get_summary(user_input, (1-user_input_per))
-        word_frequency(user_input)
+        summary = get_summary(user_input, )
+        st.write('**Extractive Summary:**')
+        for i in range(len(summary)): 
+            st.write("- ",summary[i],"\n")
     
 if __name__ == "__main__":
     write()
