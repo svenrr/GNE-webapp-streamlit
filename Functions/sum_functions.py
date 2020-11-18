@@ -65,16 +65,15 @@ def get_summary(article_text, limit_percent=0.1):
             break 
     
     # Get the output 
-    st.write("Readability: "),st.write(str(textstat.text_standard(article_text, float_output=False))) #+ st.write("([Flesch Reading Ease:](https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests#Flesch_reading_ease) ") + st.write(str(textstat.flesch_reading_ease(article_text))) + st.write(")")
-    st.write("&#35; of sentences (pre):  {}".format(len(list(doc.sents))))
-    st.write("&#35; of sentences (post): {}".format(len(summary)))
+    #st.write("Readability: "),st.write(str(textstat.text_standard(article_text, float_output=False))) #+ st.write("([Flesch Reading Ease:](https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests#Flesch_reading_ease) ") + st.write(str(textstat.flesch_reading_ease(article_text))) + st.write(")")
+    #st.write("&#35; of sentences (pre):  {}".format(len(list(doc.sents))))
+    #st.write("&#35; of sentences (post): {}".format(len(summary)))
     #st.write("\n")
-    st.write("---"*40)
-    get_tags(article_text)
+    #st.write("---"*40)
+    
     
     # Print out the bullet points 
-    for i in range(len(summary)): 
-        st.write("- ",summary[i],"\n")
+    return summary
     
 ############################################################################################################### 
 
@@ -93,8 +92,6 @@ def word_frequency(article_text):
                 word_freqs[word.text] += 1
                 
     sort_orders = sorted(word_freqs.items(), key=lambda x: x[1], reverse=True)
-    st.write("---"*40)
-    st.write("**Words that appear more than three times:**")
 
     #for i in sort_orders:
     #    if i[1] > 3:
