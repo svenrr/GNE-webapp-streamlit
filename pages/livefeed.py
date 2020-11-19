@@ -10,13 +10,12 @@ logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)
 
 def write():
     
-    num_articles = 10
     st.title('Newsfeed Preview')
     
     st.sidebar.title('Information')
     st.sidebar.info('In the future we would like to include filters for the feed. For example to only show one sentiment, certain categories or publishers etc.')
     
-    col_input, col_control= st.beta_columns((2,4))
+    col_input, col_control= st.beta_columns((2,4)) # define 2 columns to control size of input box
     with col_input:
         num_articles = st.number_input('Enter the desired number of articles you want to see (1 to 100)', min_value=1, max_value = 100, value=10)
         
@@ -25,9 +24,9 @@ def write():
         df = pd.read_csv('data/news_actual_preprocessed.csv')
         
     
-        col1, col2, col3= st.beta_columns((3,0.2,3))
+        col1, col2, col3= st.beta_columns((3,0.2,3)) # generate 3 columns where the middle one functions as a seperator
         with col1:
-            for idx in range(int(num_articles/2)):
+            for idx in range(int(num_articles/2)): # display first column
                 title_text = f'**[{df.iloc[idx].title}]({df.iloc[idx].url})**'
                 st.markdown(title_text)
                 if df.iloc[idx].sentiment == 0:
@@ -41,7 +40,7 @@ def write():
                         st.write("- ",summary[phrase],"\n")
             
         with col3:
-            for idx in range(int(num_articles/2), num_articles):
+            for idx in range(int(num_articles/2), num_articles): # display second column
                 title_text = f'**[{df.iloc[idx].title}]({df.iloc[idx].url})**'
                 st.markdown(title_text)
                 if df.iloc[idx].sentiment == 0:
