@@ -6,3 +6,4 @@ pytrends
 praw
 sklearn
 xgboost
+wordcloud
