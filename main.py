@@ -8,7 +8,7 @@ import pages.analysis
 import pages.eda
 import pages.about
 import pages.livefeed
-st.set_page_config(layout="wide")
+
 ast.core.services.other.set_logging_format()
 
 PAGES = {
