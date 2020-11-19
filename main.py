@@ -8,6 +8,8 @@ import pages.analysis
 import pages.eda
 import pages.about
 import pages.livefeed
+import pages.outlook
+import pages.trendtopics
 
 ast.core.services.other.set_logging_format()
 
@@ -16,7 +18,9 @@ PAGES = {
     "Article Analysis" : pages.analysis,
     "Data Analysis" : pages.eda,
     "Newsfeed" : pages.livefeed,
-    "About": pages.about,
+    "Trend Topics" : pages.trendtopics,
+    "Outlook": pages.outlook,
+    "About Us": pages.about,
     
 }
 
