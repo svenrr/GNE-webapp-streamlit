@@ -111,12 +111,11 @@ def write():
     st.markdown(get_table_download_link(r_search_df.iloc[0:r_search_output], filename="reddit_search.csv"), unsafe_allow_html=True) # enable download
 
     #######################################################################################################################################################
-    
+    st.write("---")
     st.markdown("# Google")
     pytrend = TrendReq() # google setup
 
-    st.write("----")
-    st.write("## Google related queries")
+    st.write("## Related queries")
 
     search_topic = st.text_input("Enter a keyword or topic...","Data Science",key="gtrend") # keyword to look for 
 
@@ -130,7 +129,7 @@ def write():
     st.dataframe(rq_df) # display the results 
 
     #######
-
+    st.write("---")
     st.markdown("## Interest over time (US)")
 
     rd_tf = st.radio("Select google property (default = web searches)", ["","news", "youtube"]) # search option 
