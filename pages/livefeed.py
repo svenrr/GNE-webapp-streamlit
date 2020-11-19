@@ -10,13 +10,13 @@ logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)
 
 def write():
     
-    num_articles = 1
+    num_articles = 10
     st.title('Newsfeed Preview')
     
     st.sidebar.title('Information')
     st.sidebar.info('In the future we would like to include filters for the feed. For example to only show one sentiment, certain categories or publishers etc.')
     
-    col_input, col_control= st.beta_columns((1,5))
+    col_input, col_control= st.beta_columns((2,4))
     with col_input:
         num_articles = st.number_input('Enter the desired number of articles you want to see (1 to 100)', min_value=1, max_value = 100, value=10)
         
