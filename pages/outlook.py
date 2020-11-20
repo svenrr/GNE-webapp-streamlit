@@ -20,7 +20,7 @@ def write():
     st.markdown("-- NewsAPI.org could be a solution (high monthly costs)") 
     st.markdown("- Newsfeed is not actually a live feed (we scrape data, then process and implement it into the app as a preview)")
     st.write(" ")
-    st.markdown("**Future Work & Ideas:**) 
+    st.markdown("**Future Work & Ideas:**") 
     st.markdown("- API that forwards all good news and makes it available to other publishers who also want to display only good news")
     st.markdown("- Twitter bot that only tweets good news") 
     st.markdown("- Social Media Sentiment Analysis for comments (i.e. reddit or twitter) in posts about news")
