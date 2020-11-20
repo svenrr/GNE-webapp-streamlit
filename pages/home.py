@@ -11,13 +11,9 @@ logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)
 def write():
     """Writes content to the app"""
     st.title('Good News Everyone')
-    col1, col2, col3= st.beta_columns((3,0.2,3))
-    
-    with col1:
-         st.image("./pages/gne-logo.png", width=175)
-        #<p align="center"><img src="" alt="logo" width="300"/></p>
-    with col3: 
-        st.markdown("**The world is better than most people think! Approximately 90% of news on the web are negative and this results in a distorted view of the world.**")
+    st.markdown("**The world is better than most people think! Approximately 90% of news on the web are negative and this results in a distorted view of the world.**")
+    st.image("./pages/gne-logo.png", width=175)
+    #<p align="center"><img src="" alt="logo" width="300"/></p> 
     st.write('''This is a project in which we try to differentiate between positive and negative/neutral news from the web automatically. 
     For this we use a variety of machine learning models and dictionary based approaches to sentiment analysis. 
     Furthermore the goal of this project was to categorize (e.g. business, finance, sports etc.) and summarize news articles. 
