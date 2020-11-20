@@ -36,7 +36,7 @@ def write():
             Currently, information can be displayed via Google Trends, Twitter and Reddit. Bigger tables can also be downloaded directly as csv files.''')
     
     st.write("----")
-    st.write("# Reddit")
+    st.write("## Reddit")
     # Load the login credentials and setup the Reddit API
     r_details = pd.read_csv("https://docs.google.com/spreadsheets/d/1WO4GedbP8xiNuLhZc20k51DrCNAmKpL4Uit15pNEqe0/export?gid=0&format=csv")
     r = praw.Reddit(client_id=r_details.client_id[0], client_secret=r_details.client_secret[0], user_agent='Henlo')
@@ -86,7 +86,7 @@ def write():
 
     #######################################################################################################################################################
 
-    st.markdown("## Search posts about a specific keyword")
+    st.markdown("### Search posts about a specific keyword")
     r_search_input = st.text_input("Enter a keyword", "bitcoin")
     r_search_sort = st.selectbox("Select sorting option", ["relevance", "hot", "top", "new", "comments"], key="r_search_sort") # search option
     r_search_time = st.selectbox("Select time filter option", ["all", "day", "month", "week", "year"], key="r_search_time") # time option
@@ -112,7 +112,7 @@ def write():
 
     #######################################################################################################################################################
     st.write("---")
-    st.markdown("# Google")
+    st.markdown("## Google")
     pytrend = TrendReq() # google setup
 
     st.write("## Related queries")
@@ -130,7 +130,7 @@ def write():
 
     #######
     st.write("---")
-    st.markdown("## Interest over time (US)")
+    st.markdown("### Interest over time (US)")
 
     rd_tf = st.radio("Select google property (default = web searches)", ["","news", "youtube"]) # search option 
     sb_tf = st.selectbox("Select a timeframe", ["today 5-y", "today 3-y", "today 12-m", "today 3-m", "today 1-m"] , key="sb_tf") # time filter/periode
