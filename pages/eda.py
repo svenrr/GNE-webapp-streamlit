@@ -6,7 +6,6 @@ import matplotlib.pyplot as plt
 from awesome_streamlit.core.services import resources
 from Functions.plots_fabi import *
 import numpy as np
-import plotly.express as px
 from datetime import datetime
 
 
