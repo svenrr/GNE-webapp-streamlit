@@ -20,7 +20,7 @@ def write():
     On this WebApp you will find an analyser page, on which you can try out our sentiment analysis, categorization and the extractive summary. Furthermore we included a preview of what a live newsfeed could look like in later stages of development.
     Thank you for being interested in our project and now enjoy some good news (hopefully).''')
     
-    st.markdown('''**General problems about news:**)
+    st.markdown("**General problems about news:**")
     st.markdown("- Opinions are very subjective, whether something is good or bad") 
     st.markdown("- Articles can belong to several categories") 
     st.markdown('- “bad” news are more entertaining')
