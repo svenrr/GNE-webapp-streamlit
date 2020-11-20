@@ -7,9 +7,10 @@ logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)
 
 
 def write():
+    st.markdown("# Outlook")
     st.write('''On this page we will discuss problems that we have noticed during our work and what would be possible solutions. 
     Furthermore, possible and potential features are shown.''')
-
+    st.markdown("----")
     st.markdown("**Problems & Improvements:**")  
     st.markdown("- Dataset") 
     st.markdown("-- Properly labeled")
