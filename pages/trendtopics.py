@@ -115,7 +115,7 @@ def write():
     st.markdown("## Google")
     pytrend = TrendReq() # google setup
 
-    st.write("## Related queries")
+    st.write("### Related queries")
 
     search_topic = st.text_input("Enter a keyword or topic...","Data Science",key="gtrend") # keyword to look for 
 
