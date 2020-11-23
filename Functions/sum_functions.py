@@ -1,3 +1,5 @@
+##### Imports & Setup #####
+
 import pandas as pd 
 import numpy as np
 import spacy
@@ -23,7 +25,7 @@ def get_summary(article_text, limit_percent=0.1):
     pos_tag = ['PROPN', 'ADJ', 'NOUN', 'VERB']
     doc = nlp(article_text.lower()) 
     for token in doc: 
-        if(token.text in nlp.Defaults.stop_words or token.text in punctuation):
+        if(token.text in nlp.Defaults.stop_words or token.text in punctuation): # Ignores the stop words and certain punctuation
             continue 
         if(token.pos_ in pos_tag):
             keywords.append(token.text) 
@@ -43,8 +45,9 @@ def get_summary(article_text, limit_percent=0.1):
                     sentence_strength[sent] += freq_words[word.text]
                 else:
                     sentence_strength[sent] = freq_words[word.text]
-                    
+                                 
     # Determine the number of sentences in the summarization (min. 3)
+    
     #if len(list(doc.sents)) > 25: 
     #    limit = math.ceil(len(list(doc.sents)) * limit_percent)
     #elif len(list(doc.sents)) < 6: 
@@ -53,15 +56,16 @@ def get_summary(article_text, limit_percent=0.1):
     #else: 
     #    limit = 3
     
-    limit = math.ceil(len(list(doc.sents)) * limit_percent)  
+    limit = math.ceil(len(list(doc.sents)) * limit_percent) # returns the smallest integral value greater than the number
     
-    # Find the top sentences 
+    # Finds the top sentences by sorting the dictionary with the sentence strength (descending from the highest strength
+    sorted_sentences = sorted(sentence_strength.items(), key=lambda kv: kv[1], reverse=True) # Save the new order 
+    
+    # Saves the records in a list that are used for the summary. The previously defined "limit" specifies how many sentences are used for the summary.
     summary = []
-    sorted_sentences = sorted(sentence_strength.items(), key=lambda kv: kv[1], reverse=True) 
-    
     counter = 0
     for i in range(len(sorted_sentences)): 
-        summary.append(str(sorted_sentences[i][0]).capitalize()) 
+        summary.append(str(sorted_sentences[i][0]).capitalize()) # Capitalize the first word of each sentence because everything was transformed into lower case letters by the pre-process
         counter += 1
         if(counter >= limit):
             break 
@@ -74,10 +78,12 @@ def get_summary(article_text, limit_percent=0.1):
     
 ############################################################################################################### 
 
+# Returns the readability of the article in grades from America
 def readability(article_text):
     return textstat.text_standard(article_text, float_output=False)
 
 ############################################################################################################### 
+
 
 def word_frequency(article_text):
     from spacy.lang.en.stop_words import STOP_WORDS
@@ -85,6 +91,7 @@ def word_frequency(article_text):
     
     doc = nlp(article_text.lower()) 
     
+    # Finds the most common words
     word_freqs = {}
     for word in doc:
         if (word.text not in stopwords and word.text not in punctuation and word.text not in '“”'):
@@ -93,9 +100,9 @@ def word_frequency(article_text):
             else:
                 word_freqs[word.text] += 1
                 
-    sort_orders = sorted(word_freqs.items(), key=lambda x: x[1], reverse=True)
+    sort_orders = sorted(word_freqs.items(), key=lambda x: x[1], reverse=True) # Sorts them in descending order of frequency
 
-    # Save the results in a dataframe and plot it
+    # Saves the results in a dataframe and returns the wordcloud
     wf_dic = dict()
     for i in sort_orders: 
         if i[1] > 3:
