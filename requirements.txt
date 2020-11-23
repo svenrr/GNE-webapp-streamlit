@@ -7,3 +7,4 @@ praw
 sklearn
 xgboost
 wordcloud
+pickle5
