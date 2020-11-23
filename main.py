@@ -16,8 +16,8 @@ ast.core.services.other.set_logging_format()
 PAGES = {
     "Home": pages.home,
     "Article Analysis" : pages.analysis,
-    "Data Analysis" : pages.eda,
     "Newsfeed" : pages.livefeed,
+    "Data Analysis" : pages.eda,
     "Trend Topics" : pages.trendtopics,
     "Outlook": pages.outlook,
     "About Us": pages.about,
