@@ -36,17 +36,23 @@ While the overall energy costs of this recycling process are lower, researchers 
     show_readability = st.sidebar.checkbox("Show readability of the article")
     show_word_frequency = st.sidebar.checkbox("Show word frequency")
     show_reading_time = st.sidebar.checkbox("Show reading time")
+    show_categorizer = st.sidebar.checkbox("Show keywords for categorizer")
        
     ### Main Functions ###
     user_input_per = st.slider('Here you can chose by how much percent the article should be reduced for the summary', min_value=0.1, max_value=0.9, value=0.9, step=0.05) # Display slider 
     if st.button('Analyse'):
-        
+            
         # Sentiment
         result = analyse(text.transform()) # Predict Sentiment on vectorized data
         st.write('**Sentiment:**', result) 
     
         # Category
-        st.write('**Category:**', Categorizer().pred(text.lem_text()).capitalize())
+        category = Categorizer(show_words=True).pred(text.lem_text())
+        st.write('**Category:**', category[0][0].capitalize())
+        
+        if show_categorizer:
+            imp = f'Keywords: {category[1][0]}'
+            st.markdown(imp)
     
         # Summary
         summary = get_summary(user_input, (1-user_input_per)) # Summary length dependend on slider position
