@@ -13,8 +13,8 @@ def write():
     st.markdown("----")
     #st.markdown("**Problems & Improvements:**")  
     with st.beta_expander("Problems & Improvements"):
-        st.markdown("- Dataset") 
-        st.markdown(". - Properly labeled")
+        st.markdown("* Dataset") 
+        st.markdown(". * Properly labeled")
         st.markdown(". - Improved cleaning") 
         st.markdown(". - More articles (balanced publishers, categories and release dates)")
         st.markdown(". - Category dataset only includes articles from 2015")
