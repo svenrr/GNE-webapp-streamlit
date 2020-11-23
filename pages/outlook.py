@@ -13,15 +13,6 @@ def write():
     st.markdown("----")
     #st.markdown("**Problems & Improvements:**")  
     with st.beta_expander("Problems & Improvements"):
-        st.markdown("""
-                        * Dataset
-                          * Properly labeled
-                        * Orange
-                          * Banana
-                        * Dairy
-                          * Milk
-                        * Cheese
-                    """
         st.markdown("* Dataset") 
         st.markdown("* Properly labeled")
         st.markdown(". - Improved cleaning") 
