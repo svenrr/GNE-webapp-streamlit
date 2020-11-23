@@ -136,7 +136,7 @@ def write():
     ####################################################################
     
     # Text length
-    st.write('**Distribution of good and bad articles between publishers**')
+    st.write('**Distribution of good and bad articles over text length**')
     # Get textlength and bin text length
     df['text_length'] = [100*int(len(text.split(' '))/100) for text in df.text]
     # Put textlength > 1600 together
