@@ -1,4 +1,4 @@
-import pickle
+import pickle5 as pickle
 import os
 from Functions.text_lemmatization import Lemmatizer
 import numpy as np
