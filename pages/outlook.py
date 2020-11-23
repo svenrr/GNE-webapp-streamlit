@@ -13,14 +13,16 @@ def write():
     st.markdown("----")
     #st.markdown("**Problems & Improvements:**")  
     with st.beta_expander("Problems & Improvements"):
-        st.markdown("* Dataset") 
-        st.markdown("* Properly labeled")
-        st.markdown(". - Improved cleaning") 
-        st.markdown(". - More articles (balanced publishers, categories and release dates)")
-        st.markdown(". - Category dataset only includes articles from 2015")
-        st.markdown("- Web-Scraping limited to 2 sources at this point in time (bbc & cnn)") 
-        st.markdown(". - NewsAPI.org could be a solution (high monthly costs)") 
-        st.markdown("- Newsfeed is not actually a live feed (we scrape data, then process and implement it into the app as a preview)")
+            st.write("""
+        * Dataset
+          * Properly labeled
+          * Improved cleaning
+          * More articles (balanced publishers, categories and release dates)
+          * Category dataset only includes articles from 2015
+        * Web-Scraping limited to 2 sources at this point in time (bbc & cnn)
+          * NewsAPI.org could be a solution (high monthly costs)
+        * Newsfeed is not actually a live feed (we scrape data, then process and implement it into the app as a preview)
+        """)
     st.write(" ")
     #st.markdown("**Future Work & Ideas:**") 
     with st.beta_expander("Future Work & Ideas"):
