@@ -9,8 +9,8 @@ def write():
     """Used to write the page in the app.py file"""
   
     with st.spinner("Loading About ..."):
-        st.markdown("![Good News](https://motionandmomentum.files.wordpress.com/2017/10/5181a5b8-6e3d-466f-9cea-8f900375fd42-720-000000640b9c2bac.gif)")
         st.title("About us")
+        st.markdown("![Good News](https://motionandmomentum.files.wordpress.com/2017/10/5181a5b8-6e3d-466f-9cea-8f900375fd42-720-000000640b9c2bac.gif)")
         st.markdown(
             """## Project
 This is our one month final project from the Data Science Bootcamp of neuefische. This was a group work, which we approached in a team of three people. If you have any questions or similar, feel free to contact us directly via LinkedIn. You can also find more information about us on the [talent website](https://talents.neuefische.de/?role=Data%20Scientist&alumniLocation=K%C3%B6ln) of neuefische.  
